@@ -8,17 +8,17 @@ USE StudentGradesDB;
 
 -- Створив таблицю StudentGrades для зберігання інформації 
 CREATE TABLE StudentGrades (
-    StudentID INT PRIMARY KEY IDENTITY(1,1), -- ²äåíòèô³êàòîð ñòóäåíòà
-    FullName NVARCHAR(100) NOT NULL, -- Ï²Á 
-    City NVARCHAR(50) NOT NULL, -- Ì³ñòî
-    Country NVARCHAR(50) NOT NULL, -- Êðà¿íà
-    DateOfBirth DATE NOT NULL, -- Äàòà íàðîäæåííÿ
-    Email NVARCHAR(100) NOT NULL, -- Åëåêòðîííà àäðåñà
-    ContactNumber NVARCHAR(15), -- Òåëåôîí
-    GroupName NVARCHAR(50) NOT NULL, -- Íàçâà ãðóïè
-    AverageGrade FLOAT NOT NULL, -- Ñåðåäíÿ îö³íêà çà ð³ê ç óñ³õ ïðåäìåò³â
-    MinSubject NVARCHAR(50) NOT NULL, -- Íàçâà ïðåäìåòà ç ì³í³ìàëüíîþ ñåðåäíüîþ îö³íêîþ
-    MaxSubject NVARCHAR(50) NOT NULL -- Íàçâà ïðåäìåòà ç ìàêñèìàëüíîþ ñåðåäíüîþ îö³íêîþ
+    StudentID INT PRIMARY KEY IDENTITY(1,1), -- Ідентифікатор студента
+    FullName NVARCHAR(100) NOT NULL, -- ПІБ 
+    City NVARCHAR(50) NOT NULL, -- Місто
+    Country NVARCHAR(50) NOT NULL, -- Країна
+    DateOfBirth DATE NOT NULL, -- Дата народження
+    Email NVARCHAR(100) NOT NULL, -- Електронна адреса
+    ContactNumber NVARCHAR(15), -- Телефон
+    GroupName NVARCHAR(50) NOT NULL, -- Назва групи
+    AverageGrade FLOAT NOT NULL, -- Середня оцінка за рік 
+    MinSubject NVARCHAR(50) NOT NULL, -- Назва предмета з мінімальною середньою оцінкою
+    MaxSubject NVARCHAR(50) NOT NULL -- Назва предмета з максимальною середньою оцінкою
 );
 
 -- Данні для демонстраціі
