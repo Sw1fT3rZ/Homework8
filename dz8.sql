@@ -1,55 +1,56 @@
--- Створив базу даних StudentGradesDB
+-- РЎС‚РІРѕСЂРёРІ Р±Р°Р·Сѓ РґР°РЅРёС… StudentGradesDB
 CREATE DATABASE StudentGradesDB;
 
--- Команда для використання БД
+-- РљРѕРјР°РЅРґР° РґР»СЏ РІРёРєРѕСЂРёСЃС‚Р°РЅРЅСЏ Р‘Р”
 USE StudentGradesDB;
 
 
 
--- Створив таблицю StudentGrades для зберігання інформації 
+-- РЎС‚РІРѕСЂРёРІ С‚Р°Р±Р»РёС†СЋ StudentGrades РґР»СЏ Р·Р±РµСЂС–РіР°РЅРЅСЏ С–РЅС„РѕСЂРјР°С†С–С— 
 CREATE TABLE StudentGrades (
-    StudentID INT PRIMARY KEY IDENTITY(1,1), -- Ідентифікатор студента
-    FullName NVARCHAR(100) NOT NULL, -- ПІБ 
-    City NVARCHAR(50) NOT NULL, -- Місто
-    Country NVARCHAR(50) NOT NULL, -- Країна
-    DateOfBirth DATE NOT NULL, -- Дата народження
-    Email NVARCHAR(100) NOT NULL, -- Електронна адреса
-    ContactNumber NVARCHAR(15), -- Телефон
-    GroupName NVARCHAR(50) NOT NULL, -- Назва групи
-    AverageGrade FLOAT NOT NULL, -- Середня оцінка за рік з усіх предметів
-    MinSubject NVARCHAR(50) NOT NULL, -- Назва предмета з мінімальною середньою оцінкою
-    MaxSubject NVARCHAR(50) NOT NULL -- Назва предмета з максимальною середньою оцінкою
+    StudentID INT PRIMARY KEY IDENTITY(1,1), -- ВІГ¤ГҐГ­ГІГЁГґВіГЄГ ГІГ®Г° Г±ГІГіГ¤ГҐГ­ГІГ 
+    FullName NVARCHAR(100) NOT NULL, -- ГЏВІГЃ 
+    City NVARCHAR(50) NOT NULL, -- ГЊВіГ±ГІГ®
+    Country NVARCHAR(50) NOT NULL, -- ГЉГ°Г ВїГ­Г 
+    DateOfBirth DATE NOT NULL, -- Г„Г ГІГ  Г­Г Г°Г®Г¤Г¦ГҐГ­Г­Гї
+    Email NVARCHAR(100) NOT NULL, -- Г…Г«ГҐГЄГІГ°Г®Г­Г­Г  Г Г¤Г°ГҐГ±Г 
+    ContactNumber NVARCHAR(15), -- Г’ГҐГ«ГҐГґГ®Г­
+    GroupName NVARCHAR(50) NOT NULL, -- ГЌГ Г§ГўГ  ГЈГ°ГіГЇГЁ
+    AverageGrade FLOAT NOT NULL, -- Г‘ГҐГ°ГҐГ¤Г­Гї Г®Г¶ВіГ­ГЄГ  Г§Г  Г°ВіГЄ Г§ ГіГ±ВіГµ ГЇГ°ГҐГ¤Г¬ГҐГІВіГў
+    MinSubject NVARCHAR(50) NOT NULL, -- ГЌГ Г§ГўГ  ГЇГ°ГҐГ¤Г¬ГҐГІГ  Г§ Г¬ВіГ­ВіГ¬Г Г«ГјГ­Г®Гѕ Г±ГҐГ°ГҐГ¤Г­ГјГ®Гѕ Г®Г¶ВіГ­ГЄГ®Гѕ
+    MaxSubject NVARCHAR(50) NOT NULL -- ГЌГ Г§ГўГ  ГЇГ°ГҐГ¤Г¬ГҐГІГ  Г§ Г¬Г ГЄГ±ГЁГ¬Г Г«ГјГ­Г®Гѕ Г±ГҐГ°ГҐГ¤Г­ГјГ®Гѕ Г®Г¶ВіГ­ГЄГ®Гѕ
 );
 
+-- Р”Р°РЅРЅС– РґР»СЏ РґРµРјРѕРЅСЃС‚СЂР°С†С–С–
 INSERT INTO StudentGrades (FullName, City, Country, DateOfBirth, Email, ContactNumber, GroupName, AverageGrade, MinSubject, MaxSubject)
 VALUES 
 ('John Doe', 'New York', 'USA', '2000-05-15', 'johndoe@example.com', '123456789', 'MathGroup', 85.5, 'History', 'Mathematics'),
 ('Jane Smith', 'Los Angeles', 'USA', '2001-08-21', 'janesmith@example.com', '987654321', 'ScienceGroup', 90.3, 'Geography', 'Physics');
 
--- Запит для відображення всієї інформації з таблиці StudentGrades
+-- Р—Р°РїРёС‚ РґР»СЏ РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ РІСЃС–С”С— С–РЅС„РѕСЂРјР°С†С–С— Р· С‚Р°Р±Р»РёС†С– StudentGrades
 SELECT * FROM StudentGrades;
 
--- Запит для відображення ПІБ усіх студентів
+-- Р—Р°РїРёС‚ РґР»СЏ РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ РџР†Р‘
 SELECT FullName FROM StudentGrades;
 
--- Запит для відображення всіх середніх оцінок
+-- Р—Р°РїРёС‚ РґР»СЏ РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ РІСЃС–С… СЃРµСЂРµРґРЅС–С… РѕС†С–РЅРѕРє
 SELECT AverageGrade FROM StudentGrades;
 
--- Запит для показу ПІБ усіх студентів з мінімальною середньою оцінкою, більшою за зазначену 
+-- Р—Р°РїРёС‚ РґР»СЏ РїРѕРєР°Р·Сѓ РџР†Р‘ СѓСЃС–С… СЃС‚СѓРґРµРЅС‚С–РІ Р· РјС–РЅС–РјР°Р»СЊРЅРѕСЋ СЃРµСЂРµРґРЅСЊРѕСЋ РѕС†С–РЅРєРѕСЋ, Р±С–Р»СЊС€РѕСЋ Р·Р° Р·Р°Р·РЅР°С‡РµРЅСѓ 
 SELECT FullName FROM StudentGrades
 WHERE AverageGrade > 70;
 
--- Запит для відображення унікальних країн студентів
+-- Р—Р°РїРёС‚ РґР»СЏ РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ СѓРЅС–РєР°Р»СЊРЅРёС… РєСЂР°С—РЅ СЃС‚СѓРґРµРЅС‚С–РІ
 SELECT DISTINCT Country FROM StudentGrades;
 
--- Запит для відображення унікальних міст студентів
+-- Р—Р°РїРёС‚ РґР»СЏ РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ СѓРЅС–РєР°Р»СЊРЅРёС… РјС–СЃС‚ СЃС‚СѓРґРµРЅС‚С–РІ
 SELECT DISTINCT City FROM StudentGrades;
 
--- Запит для відображення унікальних назв груп студентів
+-- Р—Р°РїРёС‚ РґР»СЏ РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ РЅР°Р·РІ РіСЂСѓРї 
 SELECT DISTINCT GroupName FROM StudentGrades;
 
--- Запит для відображення унікальних назв предметів із мінімальною оцінкою
+-- Р—Р°РїРёС‚ РґР»СЏ РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ СѓРЅС–РєР°Р»СЊРЅРёС… РЅР°Р·РІ РїСЂРµРґРјРµС‚С–РІ С–Р· РјС–РЅС–РјР°Р»СЊРЅРѕСЋ РѕС†С–РЅРєРѕСЋ
 SELECT DISTINCT MinSubject FROM StudentGrades;
 
--- Запит для відображення унікальних назв предметів із максимальною оцінкою
+-- Р—Р°РїРёС‚ РґР»СЏ РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ СѓРЅС–РєР°Р»СЊРЅРёС… РЅР°Р·РІ РїСЂРµРґРјРµС‚С–РІ С–Р· РјР°РєСЃРёРјР°Р»СЊРЅРѕСЋ РѕС†С–РЅРєРѕСЋ
 SELECT DISTINCT MaxSubject FROM StudentGrades;
